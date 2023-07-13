@@ -24,7 +24,7 @@ import IconMap from "./components/Map/IconMap";
 import { citiesHandler } from "./rtk/features/citiesSlice";
 import { categoriesHandler } from "./rtk/features/categoriesSlice";
 import Error from "./components/Error/Error";
-import { Places } from "./components/places/Places";
+import { Places } from "./components/Places/Places";
 
 function App() {
   const { auth } = useSelector((state) => state);
