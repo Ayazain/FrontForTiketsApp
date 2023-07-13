@@ -68,7 +68,7 @@ const CategoriesTable = () => {
     handleClose();
 
     try {
-      axios.delete(`http://localhost:9999/subcat/${id}`);
+      axios.delete(`https://api-tikets.onrender.com/subcat/${id}`);
     } catch (err) {
       console.log(err);
     }

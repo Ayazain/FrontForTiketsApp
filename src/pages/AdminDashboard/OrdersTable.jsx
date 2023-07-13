@@ -49,7 +49,9 @@ const Orders = () => {
     dispatch(handleIsLoadingToggle());
     const getOrders = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:9999/order`);
+        const { data } = await axios.get(
+          `https://api-tikets.onrender.com/order`
+        );
         dispatch(ordersHandler(data));
       } catch (err) {
         console.log(err);
@@ -90,7 +92,7 @@ const Orders = () => {
     handleClose();
     try {
       axios.delete(
-        `http://localhost:9999/order/${slcOrderUserID}/${slcOrderID}`
+        `https://api-tikets.onrender.com/order/${slcOrderUserID}/${slcOrderID}`
       );
     } catch (err) {
       console.log(err);

@@ -44,7 +44,7 @@ export default Welcome;
 
 //   useEffect(() => {
 //     const getCats = async () => {
-//       const { data } = await axios.get("http://localhost:9999/category");
+//       const { data } = await axios.get("https://api-tikets.onrender.com/category");
 //       // console.log(data);
 //       setCats(data.categories);
 //     };

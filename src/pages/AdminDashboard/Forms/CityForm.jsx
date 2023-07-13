@@ -73,7 +73,7 @@ const CityForm = () => {
 
     if (!cities.cityEdit) {
       await axios
-        .post("http://localhost:9999/category", newCity)
+        .post("https://api-tikets.onrender.com/category", newCity)
         .then((response) => {
           dispatch(addCity(response.data));
           setOpen(false);
@@ -91,7 +91,10 @@ const CityForm = () => {
         });
     } else {
       await axios
-        .put(`http://localhost:9999/category/${cities.cityEdit.id}`, newCity)
+        .put(
+          `https://api-tikets.onrender.com/category/${cities.cityEdit.id}`,
+          newCity
+        )
         .then((response) => {
           dispatch(editCity(response.data));
           setOpen(false);

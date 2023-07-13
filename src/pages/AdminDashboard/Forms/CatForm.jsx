@@ -71,7 +71,7 @@ const CatForm = () => {
 
     if (!categories.categoryEdit) {
       await axios
-        .post("http://localhost:9999/subcat", newCategory)
+        .post("https://api-tikets.onrender.com/subcat", newCategory)
         .then((response) => {
           dispatch(addCat(response.data.subcategory));
           setOpen(false);
@@ -91,7 +91,7 @@ const CatForm = () => {
     } else {
       await axios
         .put(
-          `http://localhost:9999/subcat/${categories.categoryEdit.id}`,
+          `https://api-tikets.onrender.com/subcat/${categories.categoryEdit.id}`,
           newCategory
         )
         .then((response) => {

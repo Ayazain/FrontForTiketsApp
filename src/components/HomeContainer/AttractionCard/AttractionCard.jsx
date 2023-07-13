@@ -37,7 +37,7 @@ const AttractionCard = ({ attr }) => {
     if (auth.userInfo._id) {
       const getWishlistItems = async () => {
         const { data } = await axios.get(
-          `http://localhost:9999/user/${auth.userInfo._id}`
+          `https://api-tikets.onrender.com/user/${auth.userInfo._id}`
         );
         // console.log(data.wishlist);
         setWishlistItems(data.wishlist);
@@ -57,10 +57,13 @@ const AttractionCard = ({ attr }) => {
       setIsFilled(true);
     }
     try {
-      await axios.post(`http://localhost:9999/user/${auth.userInfo._id}`, {
-        id: auth.userInfo._id,
-        Attraction: attr._id,
-      });
+      await axios.post(
+        `https://api-tikets.onrender.com/user/${auth.userInfo._id}`,
+        {
+          id: auth.userInfo._id,
+          Attraction: attr._id,
+        }
+      );
     } catch (err) {
       console.log(err);
     }
@@ -212,7 +215,7 @@ export default AttractionCard;
 //     if (auth.userInfo._id) {
 //       const getWishlistItems = async () => {
 //         const { data } = await axios.get(
-//           `http://localhost:9999/user/${auth.userInfo._id}`
+//           `https://api-tikets.onrender.com/user/${auth.userInfo._id}`
 //         );
 //         setWishlistItems(data.wishlist);
 //       };
@@ -231,7 +234,7 @@ export default AttractionCard;
 //       setIsFilled(true);
 //     }
 //     try {
-//       await axios.post(`http://localhost:9999/user/${auth.userInfo._id}`, {
+//       await axios.post(`https://api-tikets.onrender.com/user/${auth.userInfo._id}`, {
 //         id: auth.userInfo._id,
 //         Attraction: attr._id,
 //       });

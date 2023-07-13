@@ -72,7 +72,7 @@ const LoginForm = () => {
   const login = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:9999/auth/signin",
+        "https://api-tikets.onrender.com/auth/signin",
         form
       );
 
@@ -92,7 +92,7 @@ const LoginForm = () => {
   };
   const guestLogin = async (e) => {
     e.preventDefault();
-    const { data } = await axios.post("http://localhost:9999/guest");
+    const { data } = await axios.post("https://api-tikets.onrender.com/guest");
     dispatch(handleIsLoggedIntoggle());
     dispatch(handleUserInfo(data.guest));
     setOpen(false);
@@ -101,7 +101,7 @@ const LoginForm = () => {
 
   // const login = async () => {
   //   axios
-  //     .post("http://localhost:9999/auth/signin", form)
+  //     .post("https://api-tikets.onrender.com/auth/signin", form)
   //     .then((response) => {
   //       this.setState(() => ({ people: response.data }));
   //     })
@@ -378,7 +378,7 @@ export default LoginForm;
 //   const login = async () => {
 //     try {
 //       const { data } = await axios.post(
-//         "http://localhost:9999/auth/signin",
+//         "https://api-tikets.onrender.com/auth/signin",
 //         form
 //       );
 
@@ -398,7 +398,7 @@ export default LoginForm;
 //   };
 //   const guestLogin = async (e) => {
 //     e.preventDefault();
-//     const {data} =  await axios.post("http://localhost:9999/guest");
+//     const {data} =  await axios.post("https://api-tikets.onrender.com/guest");
 //     dispatch(handleIsLoggedIntoggle())
 //     dispatch(handleUserInfo(data.guest))
 //     setOpen(false);
@@ -407,7 +407,7 @@ export default LoginForm;
 
 //   // const login = async () => {
 //   //   axios
-//   //     .post("http://localhost:9999/auth/signin", form)
+//   //     .post("https://api-tikets.onrender.com/auth/signin", form)
 //   //     .then((response) => {
 //   //       this.setState(() => ({ people: response.data }));
 //   //     })

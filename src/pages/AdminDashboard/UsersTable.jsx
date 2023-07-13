@@ -80,7 +80,9 @@ const Users = () => {
   useEffect(() => {
     const getAllUsers = async () => {
       try {
-        const { data } = await axios.get("http://localhost:9999/user");
+        const { data } = await axios.get(
+          "https://api-tikets.onrender.com/user"
+        );
         dispatch(usersHandler(data));
       } catch (error) {
         console.log(error);
@@ -101,7 +103,7 @@ const Users = () => {
     dispatch(removeUser(id));
     handleClose();
     try {
-      axios.delete(`http://localhost:9999/user/${id}`);
+      axios.delete(`https://api-tikets.onrender.com/user/${id}`);
     } catch (err) {
       console.log(err);
     }
@@ -110,7 +112,7 @@ const Users = () => {
   const handleBlockUser = async (id) => {
     dispatch(blockUser(id));
     try {
-      await axios.get(`http://localhost:9999/user/block/${id}`);
+      await axios.get(`https://api-tikets.onrender.com/user/block/${id}`);
     } catch (err) {
       console.log(err);
     }
@@ -119,7 +121,7 @@ const Users = () => {
   const handleMakeAdmin = async (id) => {
     dispatch(makeAdmin(id));
     try {
-      await axios.get(`http://localhost:9999/user/role/${id}`);
+      await axios.get(`https://api-tikets.onrender.com/user/role/${id}`);
     } catch (err) {
       console.log(err);
     }

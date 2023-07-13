@@ -32,7 +32,9 @@ function App() {
   const dispatch = useDispatch();
   const getAllAttract = async () => {
     try {
-      const { data } = await axios.get("http://localhost:9999/attraction");
+      const { data } = await axios.get(
+        "https://api-tikets.onrender.com/attraction"
+      );
       dispatch(AttractionGroupHandler(data.AllAttraction));
     } catch (error) {
       console.log(error);
@@ -40,7 +42,9 @@ function App() {
   };
   const getAllCities = async () => {
     try {
-      const { data } = await axios.get("http://localhost:9999/category");
+      const { data } = await axios.get(
+        "https://api-tikets.onrender.com/category"
+      );
       dispatch(citiesHandler(data.categories));
     } catch (error) {
       console.log(error);
@@ -48,7 +52,9 @@ function App() {
   };
   const getAllCats = async () => {
     try {
-      const { data } = await axios.get("http://localhost:9999/subcat");
+      const { data } = await axios.get(
+        "https://api-tikets.onrender.com/subcat"
+      );
       dispatch(categoriesHandler(data.subcategories));
     } catch (error) {
       console.log(error);

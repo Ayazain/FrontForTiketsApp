@@ -100,7 +100,7 @@ const AddReview = () => {
     };
     console.log(newReview);
     await axios
-      .post("http://localhost:9999/review", newReview)
+      .post("https://api-tikets.onrender.com/review", newReview)
       .then((response) => {
         console.log(response);
         const newRate =
@@ -324,7 +324,7 @@ export default AddReview;
 //     };
 //     console.log(newReview);
 //     await axios
-//       .post("http://localhost:9999/review", newReview)
+//       .post("https://api-tikets.onrender.com/review", newReview)
 //       .then((response) => {
 //         setOpen(false);
 //       })

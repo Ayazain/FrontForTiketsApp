@@ -76,7 +76,7 @@ const RegisterForm = () => {
     };
     if (!users.userEdit) {
       axios
-        .post("http://localhost:9999/user/add", newUser)
+        .post("https://api-tikets.onrender.com/user/add", newUser)
         .then((response) => {
           dispatch(addUser(response.data.newUser));
           dispatch(handleOpenAuthModal(false));
@@ -101,7 +101,10 @@ const RegisterForm = () => {
         });
     } else {
       await axios
-        .put(`http://localhost:9999/user/${users.userEdit._id}`, newUser)
+        .put(
+          `https://api-tikets.onrender.com/user/${users.userEdit._id}`,
+          newUser
+        )
         .then((response) => {
           console.log("then put");
 

@@ -79,7 +79,7 @@ const RegisterForm = () => {
     };
     console.log(newUser);
     await axios
-      .post("http://localhost:9999/user", newUser)
+      .post("https://api-tikets.onrender.com/user", newUser)
       .then((response) => {
         dispatch(handleUserInfo(response.data.user));
         dispatch(handleIsLoggedIntoggle());
@@ -362,7 +362,7 @@ export default RegisterForm;
 //     };
 //     console.log(newUser);
 //     await axios
-//       .post("http://localhost:9999/user", newUser)
+//       .post("https://api-tikets.onrender.com/user", newUser)
 //       .then((response) => {
 //         dispatch(handleUserInfo(response.data.user));
 //         dispatch(handleIsLoggedIntoggle());

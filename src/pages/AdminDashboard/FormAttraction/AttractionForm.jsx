@@ -121,7 +121,7 @@ const AttractionForm = () => {
       if (!editedAttr) {
         console.log("3");
         await axios
-          .post("http://localhost:9999/attraction", newAttr)
+          .post("https://api-tikets.onrender.com/attraction", newAttr)
           .then((response) => {
             navigate("/admin");
             console.log(response.data);
@@ -140,7 +140,10 @@ const AttractionForm = () => {
       } else {
         console.log("4");
         await axios
-          .put(`http://localhost:9999/attraction/${editedAttr._id}`, newAttr)
+          .put(
+            `https://api-tikets.onrender.com/attraction/${editedAttr._id}`,
+            newAttr
+          )
           .then((response) => {
             console.log(response.data);
             navigate("/admin");

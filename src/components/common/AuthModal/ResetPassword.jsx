@@ -55,10 +55,13 @@ const ResetPassword = () => {
   const reset = async () => {
     try {
       console.log(token);
-      const { data } = await axios.post("http://localhost:9999/auth/reset", {
-        token: token,
-        password: form.password,
-      });
+      const { data } = await axios.post(
+        "https://api-tikets.onrender.com/auth/reset",
+        {
+          token: token,
+          password: form.password,
+        }
+      );
       // dispatch(handleAuthType("login"));
       // dispatch(handleToggleAuthModal());
     } catch (error) {

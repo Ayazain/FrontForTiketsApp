@@ -100,7 +100,7 @@ const OrderForm = () => {
     // console.log(users.users.filter((user) => user._id == userId)[0]);
     // console.log(newOrder);
     await axios
-      .post("http://localhost:9999/order", newOrder)
+      .post("https://api-tikets.onrender.com/order", newOrder)
       .then((response) => {
         const order = { ...response.data, attraction: attr, user: user };
         dispatch(addOrder(order));

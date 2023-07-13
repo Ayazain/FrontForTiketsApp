@@ -24,7 +24,7 @@ const CardItem = ({ attr }) => {
     if (auth.userInfo._id) {
       const getWishlistItems = async () => {
         const { data } = await axios.get(
-          `http://localhost:9999/user/${auth.userInfo._id}`
+          `https://api-tikets.onrender.com/user/${auth.userInfo._id}`
         );
         setWishlistItems(data.wishlist);
       };
@@ -42,10 +42,13 @@ const CardItem = ({ attr }) => {
       setWishlistItems(newWishlist);
     }
     try {
-      await axios.post(`http://localhost:9999/user/${auth.userInfo._id}`, {
-        id: auth.userInfo._id,
-        Attraction: attr._id,
-      });
+      await axios.post(
+        `https://api-tikets.onrender.com/user/${auth.userInfo._id}`,
+        {
+          id: auth.userInfo._id,
+          Attraction: attr._id,
+        }
+      );
     } catch (err) {
       console.log(err);
     }
@@ -112,7 +115,13 @@ const CardItem = ({ attr }) => {
           </Typography>
           <Typography variant="body1" color="text.info" component="span">
             <div className="flex items-center justify-between pl-2">
-              <Rating value={attr.averageRating || calculateAverageRating(attr.review)} precision={0.25} readOnly />
+              <Rating
+                value={
+                  attr.averageRating || calculateAverageRating(attr.review)
+                }
+                precision={0.25}
+                readOnly
+              />
               <button
                 className="btn btn-ghost btn-circle"
                 onClick={

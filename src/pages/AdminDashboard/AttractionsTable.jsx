@@ -56,7 +56,9 @@ const Attractions = () => {
 
     const getAttrs = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:9999/attraction`);
+        const { data } = await axios.get(
+          `https://api-tikets.onrender.com/attraction`
+        );
         // console.log(data.AllAttraction);
         setAttrs(
           data.AllAttraction.map((attr) => ({
@@ -92,7 +94,7 @@ const Attractions = () => {
     handleClose();
 
     try {
-      axios.delete(`http://localhost:9999/attraction/${id}`);
+      axios.delete(`https://api-tikets.onrender.com/attraction/${id}`);
     } catch (err) {
       console.log(err);
     }

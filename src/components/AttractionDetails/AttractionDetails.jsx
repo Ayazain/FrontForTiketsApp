@@ -19,7 +19,9 @@ const AttractionDetails = () => {
   const { attractions } = useSelector((state) => state);
   const dispatch = useDispatch();
   const getAttrs = async () => {
-    const { data } = await axios.get(`http://localhost:9999/attraction/${id}`);
+    const { data } = await axios.get(
+      `https://api-tikets.onrender.com/attraction/${id}`
+    );
 
     setAttrDetails(data.Attraction);
     dispatch(reviewHandler(data.Attraction.reviews[0]));
@@ -80,7 +82,7 @@ export default AttractionDetails;
 //   const { attractions } = useSelector((state) => state);
 //   const dispatch = useDispatch();
 //   const getAttrs = async () => {
-//     const { data } = await axios.get(`http://localhost:9999/attraction/${id}`);
+//     const { data } = await axios.get(`https://api-tikets.onrender.com/attraction/${id}`);
 //     // console.log(data.Attraction);
 //     setAttrDetails(data.Attraction);
 //   };

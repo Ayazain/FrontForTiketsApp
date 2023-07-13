@@ -56,7 +56,7 @@ const ForgetPassword = () => {
       setSending("sending");
       console.log(email);
       const { data } = await axios.post(
-        "http://localhost:9999/auth/forgetPassword",
+        "https://api-tikets.onrender.com/auth/forgetPassword",
         {
           emailAddress: email,
         }

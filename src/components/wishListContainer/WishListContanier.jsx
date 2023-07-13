@@ -12,7 +12,7 @@ const WishListContanier = ({ attr }) => {
   const [wishlistItems, setWishlistItems] = useState([]);
 
   const { auth, cities, categories } = useSelector((state) => state);
-  const baseURL = `http://localhost:9999/user/${auth.userInfo._id}`;
+  const baseURL = `https://api-tikets.onrender.com/user/${auth.userInfo._id}`;
 
   useEffect(() => {
     const getWishlistItems = async () => {

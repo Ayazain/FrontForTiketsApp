@@ -7,7 +7,7 @@ const Orders = () => {
   useEffect(() => {
     const getOrders = async () => {
       const { data } = await axios.get(
-        `http://localhost:9999/user/orders/${auth.userInfo._id}`
+        `https://api-tikets.onrender.com/user/orders/${auth.userInfo._id}`
       );
       console.log(data.orders);
       setOrders(data.orders);

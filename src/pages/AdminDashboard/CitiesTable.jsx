@@ -64,7 +64,7 @@ const CitiesTable = () => {
     handleClose();
 
     try {
-      axios.delete(`http://localhost:9999/category/${id}`);
+      axios.delete(`https://api-tikets.onrender.com/category/${id}`);
     } catch (err) {
       console.log(err);
     }
