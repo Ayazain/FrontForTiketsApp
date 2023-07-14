@@ -31,8 +31,8 @@ const Home = () => {
       </Container>
       <WhyChooseUs />
       <Container>{/* <Map /> */}</Container>
-      <Filter />
-      <HighestRated />
+      {/* <Filter />
+        <HighestRated /> */}
     </>
   );
 };
