@@ -30,11 +30,9 @@ const Home = () => {
         </Grid>
       </Container>
       <WhyChooseUs />
-      <Container>
-        {/* <Map /> */}
-      </Container>
-      {/* <Filter />
-        <HighestRated /> */}
+      <Container>{/* <Map /> */}</Container>
+      <Filter />
+      <HighestRated />
     </>
   );
 };
